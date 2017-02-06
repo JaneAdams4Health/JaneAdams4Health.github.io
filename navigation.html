@@ -1,0 +1,65 @@
+﻿<!-- header -->
+<header id="mainHeader" class="top-header navbar navbar-default header-transparent navbar-fixed-top yamm">
+    <div class="search-click">
+        <div class="container">
+            <form>
+                <input type="text" class="form-control" placeholder="Type and hit enter">
+                <i class="fa fa-times"></i>
+            </form>
+        </div>
+    </div><!--search bar end-->
+    <div class="container">
+        <div class="pull-right nav-header-right">
+            <!--                    <div class="h-item dropdown">
+                                    <a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-shopping-bag"></i></a>
+                                    <ul class="dropdown-menu h-item-dropdown cart-dropdown">
+                                        <li>Your Cart items</li>
+                                    </ul>
+                                </div>-->
+            <div class="h-item dropdown-search" id="search-trigger">
+                <a href="javascript:void(0)"><i class="fa fa-search"></i></a>
+
+            </div>
+        </div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Jane Adams</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown" id="navHome">
+                    <a href="index.html">Home></a>
+                </li>
+                <li class="dropdown" id="navAbout">
+                    <a href="about.html">About></a>
+                </li>
+                <li class="dropdown" id="navTherapy">
+                    <a href="therapy.html">Nutritional Therapy></a>
+                </li>
+                <li class="dropdown" id="navServices">
+                    <a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="fa fa-angle-down"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="services.html">Nutritional Therapy</a></li>
+                        <li><a href="services.html">Testing</a></li>
+                        <li><a href="services.html">Tropic</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown" id="navBlog">
+                    <a href="blog.html">Blog></a>
+                </li>
+                <li class="dropdown" id="navContact">
+                    <a href="contact.html">Contact></a>
+                </li>
+
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</header>
+<!-- header end -->
+
+<div ng-init="initialize()"></div>
