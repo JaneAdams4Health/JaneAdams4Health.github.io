@@ -567,7 +567,7 @@ Top bar styles
 }
 
 .top-header .navbar-nav > .active > a, .top-header .navbar-nav > .active > a:focus, .top-header .navbar-nav > .active > a:hover, .top-header .navbar-nav > .open > a, .top-header .navbar-nav > .open > a:focus, .top-header .navbar-nav > .open > a:hover {
-  color: #09c4f2 !important;
+  color: #5ada1b !important;
   background-color: transparent;
 }
 
@@ -595,17 +595,17 @@ Top bar styles
 }
 
 .navbar-default.header-transparent .navbar-nav > li > a {
-  color: #eee;
+  color: #09310a;
 }
 .navbar-default.header-transparent .navbar-nav > li > a:hover {
-  color: #09c4f2;
+  color: #5ada1b;
 }
 
 .navbar-default.header-transparent.shrink .navbar-nav > li > a {
   color: #333;
 }
 .navbar-default.header-transparent.shrink .navbar-nav > li > a:hover {
-  color: #09c4f2;
+  color: #5ada1b;
 }
 
 .navbar-default.header-transparent .navbar-brand {
@@ -691,7 +691,7 @@ Top bar styles
   background-color: transparent;
 }
 .top-header.navbar-default .navbar-toggle .icon-bar, .top-header.navbar-inverse .navbar-toggle .icon-bar {
-  background-color: #09c4f2;
+  background-color: #5ada1b;
 }
 
 /**header logo center style**/
@@ -761,7 +761,7 @@ Top bar styles
 }
 .dropdown-menu.dark-dropdown > li > a:hover {
   background-color: transparent;
-  color: #09c4f2;
+  color: #5ada1b;
 }
 .dropdown-menu.dark-dropdown .mega-vertical-nav li a {
   color: #aeaeae;
@@ -792,14 +792,14 @@ Top bar styles
   color: #eee;
 }
 .dropdown-span:hover {
-  color: #09c4f2;
+  color: #5ada1b;
 }
 
 .navbar-default.header-transparent.shrink .navbar-nav > li > .dropdown-span {
   color: #333;
 }
 .navbar-default.header-transparent.shrink .navbar-nav > li > .dropdown-span:hover {
-  color: #09c4f2;
+  color: #5ada1b;
 }
 
 /*!
@@ -1566,6 +1566,9 @@ Intro sections
   background-attachment: fixed;
   padding: 150px 0;
   padding-top: 200px;
+}
+.breadcrumb-v1.b-parllax.tropic {
+  background: url("../img/tropic_range.jpg") no-repeat;
 }
 .breadcrumb-v1.b-parllax h1, .breadcrumb-v1.b-parllax p, .breadcrumb-v1.b-parllax ol li {
   color: #fff;
