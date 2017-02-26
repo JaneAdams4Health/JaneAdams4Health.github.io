@@ -80,7 +80,7 @@
                                 <a class="social-icon social-gray social-sm si-linkedin" href="javascript:void(0)" data-toggle="tooltip" title="" data-original-title="LinkedIn"><i class="fa fa-linkedin"></i></a>
                             </li>
                             <li>
-                                <a class="social-icon social-gray social-sm si-tumblr" href="javascript:void(0)" data-toggle="tooltip" title="" data-original-title="Tumblr"><i class="fa fa-tumblr"></i></a>
+                                <a class="social-icon social-gray social-sm si-tumblr" href="{{ appCtrl.tumblrUrl }}" data-toggle="tooltip" title="" data-original-title="Tumblr"><i class="fa fa-tumblr"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -91,7 +91,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 margin-b-30">
-                <h1>Booking Form</h1>
+                <h1>Contact Form</h1>
             </div>
         </div>
         <div class="row">
@@ -99,7 +99,7 @@
 
                 <div class="contact-form">
 
-                    <form role="form" id="feedbackForm">
+                    <form role="form" id="feedbackForm" novalidate data-ng-submit="appCtrl.submitContactForm()">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -130,7 +130,8 @@
                             </div>
                             <span class="help-block" style="display: none;">Please enter a message.</span>
                         </div>
-                        <input type="submit" id="feedbackSubmit" class="btn btn-skin btn-xl" style="display: block; margin-top: 10px;" value="submit">
+                        <a id="btnSubmit" href="#" class="btn btn-skin btn-xl" style="display: block; margin-top: 10px;" ng-click="appCtrl.submitContactForm()">Submit</a>
+<!--                        <input type="submit" id="feedbackSubmit" class="btn btn-skin btn-xl" style="display: block; margin-top: 10px;" value="submit">-->
                     </form>
                 </div><!--contact form-->
 

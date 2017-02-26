@@ -58,7 +58,7 @@
                     </p>
                     <a href="#" class="btn btn-xl btn-dark" data-toggle="modal" data-target="#vitaminModal">Why test this?</a>
                     <div class="space-10"></div>
-                    <a href="#" class="btn btn-xl btn-dark">Book</a>
+                    <a href="booking.html?select=vitDtest" class="btn btn-xl btn-dark">Book</a>
                 </div>
             </div>
             <div class="col-sm-3">
@@ -69,12 +69,13 @@
                     <p>
                         Add this to an initial consultation
                     </p>
-                    <a href="#" class="btn btn-xl btn-border-white">Book</a>
+                    <a href="booking.html?select=vitDtestInConsultation" class="btn btn-xl btn-border-white">Book</a>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="price-box gray-bg text-center">
                     <h3 class="p-title">Food Intolerance Test</h3>
+                    <h2 class="">From</h2>
                     <h1 class="price">£80</h1>
                     <span>30 to 60 minutes</span>
                     <p>
@@ -82,93 +83,23 @@
                     </p>
                     <a href="#" class="btn btn-xl btn-dark" data-toggle="modal" data-target="#intoleranceModal">More details</a>
                     <div class="space-10"></div>
-                    <a href="#" class="btn btn-xl btn-dark">Book</a>
+                    <a href="booking.html?select=foodIntolerance" class="btn btn-xl btn-dark">Book</a>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="price-box theme-bg text-center">
                     <h3 class="p-title">Food Intolerance Test</h3>
+                    <h2 class="">From</h2>
                     <h1 class="price">£40</h1>
                     <span>Within consultation</span>
                     <p>
                         Add this to an initial consultation
                     </p>
-                    <a href="#" class="btn btn-xl btn-border-white">Book</a>
+                    <a href="booking.html?select=foodIntoleranceInConsultation" class="btn btn-xl btn-border-white">Book</a>
                 </div>
             </div>
         </div>
 
-        <div class="space-40"></div>
-
-        <div class="row">
-            <div class="col-sm-12 margin-b-30">
-                <h1>Booking Form</h1>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-12 margin-b-30">
-
-                <div class="contact-form">
-
-                    <form role="form" id="feedbackForm">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <!--                                            <label class="control-label" for="name">Name *</label>-->
-                                    <div>
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" />
-
-                                    </div>
-                                    <span class="help-block" style="display: none;">Please enter your name.</span>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <!--                                            <label class="control-label" for="email">Email Address *</label>-->
-                                    <div>
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" />
-
-                                    </div>
-                                    <span class="help-block" style="display: none;">Please enter a valid e-mail address.</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label for="initial" class="btn btn-default">Initial Consultation <input type="checkbox" id="initial" class="badgebox"><span class="badge">&check;</span></label>
-                                &nbsp;
-                                <label for="followup" class="btn btn-default">Follow up <input type="checkbox" id="followup" class="badgebox"><span class="badge">&check;</span></label>
-                                &nbsp;
-                                <label for="initialAndFollowup" class="btn btn-default">Initial and follow up <input type="checkbox" id="initialAndFollowup" class="badgebox"><span class="badge">&check;</span></label>
-                                &nbsp;
-                                <label for="followup2" class="btn btn-default">2 follow ups <input type="checkbox" id="followup2" class="badgebox"><span class="badge">&check;</span></label>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="vit_d_test" class="btn btn-default">Vitamin D Test <input type="checkbox" id="vit_d_test" class="badgebox"><span class="badge">&check;</span></label>
-                                &nbsp;
-                                <label for="foodIntolTest" class="btn btn-default">Food Intolerance Test <input type="checkbox" id="foodIntolTest" class="badgebox"><span class="badge">&check;</span></label>
-                                &nbsp;
-                            </div>
-                        </div>
-                        <div class="space-20"></div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <!--                                    <label class="control-label" for="message">Message *</label>-->
-                                    <div>
-                                        <textarea rows="5" cols="30" class="form-control" id="message" name="message" placeholder="Enter your message (optional)"></textarea>
-
-                                    </div>
-                                    <span class="help-block" style="display: none;">Enter a message (optional).</span>
-                                </div>
-                                <input type="submit" id="feedbackSubmit" class="btn btn-skin btn-xl" style="display: block; margin-top: 10px;" value="Book">
-                            </div>
-                        </div>
-                    </form>
-                </div><!--contact form-->
-            </div>
-        </div>
     </div><!--container end-->
 
     <!--intolerance modal text start-->
@@ -202,7 +133,7 @@
                     </p>
                     <br>
                     <div class="text-center">
-                        <a href="#" class="btn btn-skin btn-lg">Book a test</a>
+                        <a href="booking.html?select=foodIntolerance" class="btn btn-skin btn-lg">Book a test</a>
                     </div>
                 </div>
             </div>
@@ -233,7 +164,7 @@
                     </p>
                     <br>
                     <div class="text-center">
-                        <a href="#" class="btn btn-skin btn-lg">Book a test</a>
+                        <a href="booking.html?select=vitDtest" class="btn btn-skin btn-lg">Book a test</a>
                     </div>
                 </div>
             </div>

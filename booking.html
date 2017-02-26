@@ -18,7 +18,7 @@
     <link href="owl-carousel/owl.transitions.css" rel="stylesheet">
     <link href="bower_components/lightbox2/dist/css/lightbox.css" rel="stylesheet">
     <link href="bower_components/flexslider/flexslider.css" rel="stylesheet">
-
+    <link href="css/checkbox.css" rel="stylesheet">
 
     <!--main css file-->
     <link href="css/style.css" rel="stylesheet">
@@ -40,66 +40,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 animated fadeInUp">
-                    <h1 style="color:black">Contact Me</h1>
+                    <h1 style="color:black">Booking Form</h1>
                 </div>
             </div>
         </div>
     </div><!--breadcrumb end-->
     <div class="space-70"></div>
-    <div class="contact-info-wide">
-        <div class="container">
-            <div class="row margin-b-50">
-                <div class="col-sm-4 text-center margin-b-30">
-                    <h3>Call me</h3>
-                    <p>
-                        Please contact me between the hours of 9am and 5pm Monday to Friday (GMT)
-                    </p>
-                    <span class="btn btn-dark btn-xl">07742 649572</span>
-                </div>
-                <div class="col-sm-4 text-center margin-b-30">
-                    <h3>Mail me</h3>
-                    <p>
-                        Please email me with any questions and I will get back to you as soon as possible
-                    </p>
-                    <span class="btn btn-dark btn-xl">janeadams4health@yahoo.co.uk</span>
-                </div>
-                <div class="col-sm-4 text-center margin-b-30">
-                    <h3>Follow me</h3>
-                    <p>
-                        I am active on Facebook, Twitter and Tumblr so please follow me for the latest news and updates in nutrition
-                    </p>
-                    <div class="clearfix">
-                        <ul class="list-inline text-center social-list">
-                            <li>
-                                <a class="social-icon social-gray social-sm  si-facebook" href="{{ appCtrl.facebookUrl }}" data-toggle="tooltip" title="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a class="social-icon social-gray social-sm si-twitter" href="javascript:void(0)" data-toggle="tooltip" title="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a class="social-icon social-gray social-sm si-linkedin" href="javascript:void(0)" data-toggle="tooltip" title="" data-original-title="LinkedIn"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                            <li>
-                                <a class="social-icon social-gray social-sm si-tumblr" href="javascript:void(0)" data-toggle="tooltip" title="" data-original-title="Tumblr"><i class="fa fa-tumblr"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="container">
-        <div class="row">
-            <div class="col-sm-12 margin-b-30">
-                <h1>Booking Form</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6 margin-b-30">
+        <form role="form" id="feedbackForm" novalidate data-ng-submit="appCtrl.submitBookingForm()">
+            <div class="row">
+                <div class="col-sm-6 margin-b-30">
 
-                <div class="contact-form">
+                    <div class="contact-form">
 
-                    <form role="form" id="feedbackForm">
+                        <h1>Personal Details</h1>
+
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -125,22 +80,148 @@
                         <div class="form-group">
                             <!--                                    <label class="control-label" for="message">Message *</label>-->
                             <div>
-                                <textarea rows="5" cols="30" class="form-control" id="message" name="message" placeholder="Enter your message"></textarea>
+                                <textarea rows="5" cols="30" class="form-control" id="message" name="message" placeholder="Enter an optional message"></textarea>
 
                             </div>
                             <span class="help-block" style="display: none;">Please enter a message.</span>
                         </div>
-                        <input type="submit" id="feedbackSubmit" class="btn btn-skin btn-xl" style="display: block; margin-top: 10px;" value="submit">
-                    </form>
-                </div><!--contact form-->
+                        <div class="form-group">
+                            <div>
+                                <h3>Total Cost: <span id="spanTotalCost"></span></h3>
+                            </div>
+                        </div>
+                    </div><!--contact form-->
 
+                </div>
+                <div class="col-sm-6 margin-b-30">
+                    <div class="contact-form">
+
+                        <h1>Service Choice</h1>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h3>
+                                    Initial Consultation
+                                </h3>
+                            </div>
+                            <div class="col-md-2">
+                                <section title="Click to select">
+                                    <div class="roundedOne">
+                                        <input type="checkbox" value="None" id="checkConsultation" name="check" ng-click="appCtrl.serviceCheckSelected()"/>
+                                        <label for="checkConsultation"></label>
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="col-md-2">
+                                <h3>£70</h3>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h3>
+                                    Consultation Follow Up
+                                </h3>
+                            </div>
+                            <div class="col-md-2">
+                                <section title="Click to select">
+                                    <div class="roundedOne">
+                                        <input type="checkbox" value="None" id="checkFollowUp" name="check" ng-click="appCtrl.serviceCheckSelected()"/>
+                                        <label for="checkFollowUp"></label>
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="col-md-2">
+                                <h3>£45</h3>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h3>
+                                    Consultation and Follow Up
+                                </h3>
+                            </div>
+                            <div class="col-md-2">
+                                <section title="Click to select">
+                                    <div class="roundedOne">
+                                        <input type="checkbox" value="None" id="checkConsultationAndFollowUp" name="check" ng-click="appCtrl.selectedPackage1()" />
+                                        <label for="checkConsultationAndFollowUp"></label>
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="col-md-2">
+                                <h3>£100</h3>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h3>
+                                    2 Follow Ups
+                                </h3>
+                            </div>
+                            <div class="col-md-2">
+                                <section title="Click to select">
+                                    <div class="roundedOne">
+                                        <input type="checkbox" value="None" id="checkTwoFollowUps" name="check" ng-click="appCtrl.serviceCheckSelected()"/>
+                                        <label for="checkTwoFollowUps"></label>
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="col-md-2">
+                                <h3>£80</h3>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h3>
+                                    Vitamin D Test
+                                </h3>
+                            </div>
+                            <div class="col-md-2">
+                                <section title="Click to select">
+                                    <div class="roundedOne">
+                                        <input type="checkbox" value="None" id="checkVitaminDtest" name="check" ng-click="appCtrl.serviceCheckSelected()"/>
+                                        <label for="checkVitaminDtest"></label>
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="col-md-2">
+                                <h3>£45</h3>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h3>
+                                    Intolerance Test
+                                </h3>
+                            </div>
+                            <div class="col-md-2">
+                                <section title="Click to select">
+                                    <div class="roundedOne">
+                                        <input type="checkbox" value="None" id="checkIntoleranceTest" name="check" ng-click="appCtrl.serviceCheckSelected()"/>
+                                        <label for="checkIntoleranceTest"></label>
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="col-md-2">
+                                <h3>From £80</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6">
-                <!-- Google Map -->
-                <!-- Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it! -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2234.0817045785457!2d-3.3060565340618804!3d55.94795578060603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4887c5da700c3221%3A0x5a0b5c3e32b45b32!2sStuart+Green%2C+Edinburgh+EH12+8YF!5e0!3m2!1sen!2suk!4v1486303066937" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>                <!-- End Google Map -->
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <a id="btnSubmit" href="#" class="btn btn-skin btn-xl" style="display: block; margin-top: 10px;" ng-click="appCtrl.submitBookingForm()">Submit</a>
+<!--                    <input type="submit" id="feedbackSubmit" class="btn btn-skin btn-xl" style="display: block; margin-top: 10px;" value="submit">-->
+                </div>
             </div>
-        </div>
+        </form>
     </div>
     <div class="space-40"></div>
 
