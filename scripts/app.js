@@ -269,7 +269,7 @@
                     // Fail message
                     $("#btnSubmit").attr("disabled", false);
                     $("#alertMsgLabel").text("Email failed to send.")
-                    $("#alertMsg").text("Unfortuantely your email failed to send. Please copy the text below and email to " + emailAddress + ":\n\n" + bodyText);
+                    $("#alertMsg").text("Unfortuantely your email failed to send. Please copy the text below and email to " + $scope.emailAddress + ":\n\n" + bodyText);
                     $("#alertModal").modal('show');
                 },
             })
