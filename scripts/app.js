@@ -12,6 +12,8 @@
         this.emailAddress = 'janeadams4health@yahoo.co.uk';
         this.facebookUrl = 'https://www.facebook.com/janeadamsNT';
         this.tumblrUrl = 'https://janeadamsnutritionaltherapist.tumblr.com/';
+        this.twitterUrl = 'https://twitter.com/jadams4health';
+        this.linkedInUrl = 'https://www.linkedin.com/in/jane-adams-b8188910/';
 
         this.costIsFrom = false;
 
@@ -90,7 +92,10 @@
                 consultationAdded = true;
             }
             if ($('#checkFollowUp').attr('checked')) {
-                totalCost += 45;
+                if (consultationAdded)
+                    totalCost += 30;
+                else
+                    totalCost += 45;
             }
             if ($('#checkConsultationAndFollowUp').attr('checked')) {
                 totalCost += 100;
@@ -179,13 +184,24 @@
             // Disable the button to avoid repeated submits
             $("#btnSubmit").attr("disabled", true);
 
+            var name = $('#name').val();
+            var email = $('#email').val();
+            var msg = $('#message').val();
+
+            if (name.length == 0 || email.length == 0 || msg.length == 0) {
+                $("#alertMsgLabel").text("Please enter your name, email address and message.")
+                $("#alertModal").modal('show');
+                $("#btnSubmit").attr("disabled", false);
+
+                return;
+            }
+
             var bodyText = "A new booking request has been made:\n";
 
-            bodyText += "Name: " + $('#name').val() + "\n";
-            bodyText += "Email: " + $('#email').val() + "\n";
-            bodyText += "Message: " + $('#message').val() + "\n";
+            bodyText += "Name: " + name + "\n";
+            bodyText += "Email: " + email + "\n";
+            bodyText += "Message: " + msg + "\n";
 
-            
             sendEmail("New Contact Request from " + $('#name').val(), bodyText);
         }
 
@@ -194,16 +210,37 @@
             // Disable the button to avoid repeated submits
             $("#btnSubmit").attr("disabled", true);
 
+            var name = $('#name').val();
+            var email = $('#email').val();
+
+            if (name.length == 0 || email.length == 0) {
+                $("#alertMsgLabel").text("Please enter your name and email address.")
+                $("#alertModal").modal('show');
+                $("#btnSubmit").attr("disabled", false);
+
+                return;
+            }
+
+            var totalCost = getTotalCost();
+
+            if (totalCost == 0) {
+                $("#alertMsgLabel").text("Please select a service to book!")
+                $("#alertModal").modal('show');
+                $("#btnSubmit").attr("disabled", false);
+
+                return;
+            }
+
             var bodyText = "A new booking request has been made:\n";
 
-            bodyText += "Name: " + $('#name').val() + "\n";
-            bodyText += "Email: " + $('#email').val() + "\n";
+            bodyText += "Name: " + name + "\n";
+            bodyText += "Email: " + email + "\n";
             bodyText += "Message: " + $('#message').val() + "\n";
 
             bodyText += "\nServices requested:\n";
             bodyText += getServicesText();
-            bodyText += "\nQuoted Total Cost: £" + getTotalCost() + "\n";
-
+            bodyText += "\nQuoted Total Cost: £" + totalCost + "\n";
+            return;
             sendEmail("New Booking Request from " + $('#name').val(), bodyText);
         }
 
@@ -222,13 +259,8 @@
                 success: function () {
                     // Enable button & show success message
                     $("#btnSubmit").attr("disabled", false);
-                    $('#success').html("<div class='alert alert-success'>");
-                    $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                        .append("</button>");
-                    $('#success > .alert-success')
-                        .append("<strong>Your message has been sent. </strong>");
-                    $('#success > .alert-success')
-                        .append('</div>');
+                    $("#alertMsgLabel").text("Your email has been sent.")
+                    $("#alertModal").modal('show');
 
                     //clear all fields
 //                    $('#contactForm').trigger("reset");
@@ -236,13 +268,9 @@
                 error: function () {
                     // Fail message
                     $("#btnSubmit").attr("disabled", false);
-                    $('#success').html("<div class='alert alert-danger'>");
-                    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                        .append("</button>");
-                    $('#success > .alert-danger').append("<strong>Sorry " + $('#name').val() + ", it seems that my mail server is not responding. Please try again later!");
-                    $('#success > .alert-danger').append('</div>');
-                    //clear all fields
-//                    $('#contactForm').trigger("reset");
+                    $("#alertMsgLabel").text("Email failed to send.")
+                    $("#alertMsg").text("Unfortuantely your email failed to send. Please copy the text below and email to " + emailAddress + ":\n\n" + bodyText);
+                    $("#alertModal").modal('show');
                 },
             })
         }

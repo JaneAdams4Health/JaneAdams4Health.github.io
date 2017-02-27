@@ -26,7 +26,8 @@ a, button {
 }
 
 a {
-  color: #09c4f2;
+  color: #3c8837; /* Was: #09c4f2; */
+  font-weight: 700;
 }
 a:hover {
   color: #aeaeae;
@@ -35,6 +36,18 @@ a:hover {
 a, a:hover, a:focus, button:hover, button:focus {
   outline: 0 !important;
   text-decoration: none;
+}
+
+p.about {
+    color: white;
+}
+
+p.lead {
+    color: #235020;
+}
+
+.highlight {
+    color: #235020;
 }
 
 blockquote {
@@ -220,7 +233,7 @@ label, .label {
 }
 
 .skin-bg {
-  background-color: #09c4f2;
+  background-color: #235020; /* Was #09c4f2; */
 }
 
 .gray-bg {
@@ -1436,11 +1449,11 @@ Intro sections
 }
 
 .btn-skin {
-  background-color: #09c4f2;
+  background-color: #235020; /* Was: #09c4f2;*/
   color: #fff;
 }
 .btn-skin:hover, .btn-skin:focus {
-  background-color: #666;
+  background-color: #3c8837; /* Was #666; */
   color: #fff;
 }
 
@@ -1476,12 +1489,12 @@ Intro sections
 }
 
 .btn-border {
-  border: 2px solid #09c4f2;
-  color: #09c4f2;
+  border: 2px solid #235020; /* Was: #09c4f2; */
+  color: #235020; /* Was: #09c4f2; */
   background-color: transparent;
 }
 .btn-border:hover, .btn-border:focus {
-  background-color: #09c4f2;
+  background-color: #235020; /* Was: #09c4f2; */
   color: #fff;
 }
 .btn-border.btn-hvr:hover, .btn-border.btn-hvr:focus {
@@ -1489,7 +1502,7 @@ Intro sections
   color: #fff;
 }
 .btn-border.btn-hvr.hvr-radial-in:hover, .btn-border.btn-hvr.hvr-rectangle-in:hover {
-  background-color: #09c4f2;
+  background-color: #235020; /* Was: #09c4f2; */
 }
 
 .button-elements {
@@ -2682,7 +2695,7 @@ Owl carousel css
   height: 40px;
   line-height: 40px;
   text-align: center;
-  background: #09c4f2;
+  background: #235020; /* Was: #09c4f2; */
   font-size: 25px;
   margin: 0px;
 }
@@ -2724,7 +2737,7 @@ Owl carousel css
 .owl-theme .owl-controls .owl-page span {
   width: 8px;
   height: 8px;
-  background: #09c4f2;
+  background: #235020; /* Was: #09c4f2; */
 }
 
 .testi-box {
@@ -2913,7 +2926,7 @@ MODAL POPUPS FROM BOOTSTRAP
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   border-radius: 50%;
-  background-color: #09c4f2;
+  background-color: #235020; /* Was: #09c4f2; */
   color: #fff;
 }
 .modal-header .close {
@@ -3058,7 +3071,7 @@ Paginations css
   text-transform: capitalize;
 }
 .price-box.theme-bg {
-  background-color: #09c4f2;
+  background-color: #235020; /* Was: #09c4f2;*/
 }
 .price-box.theme-bg .p-title, .price-box.theme-bg .price, .price-box.theme-bg p, .price-box.theme-bg span, .price-box.theme-bg ul li {
   color: #fff;
@@ -3879,6 +3892,7 @@ input[type="password"], input[type="email"], select.form-control {
   -moz-box-shadow: none;
   -ms-box-shadow: none;
   box-shadow: none;
+  border: 1px solid #235020;
 }
 
 .input-group-addon {

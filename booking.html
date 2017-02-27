@@ -135,7 +135,7 @@
                                 <h3>£45</h3>
                             </div>
                         </div>
-
+                        
                         <div class="row">
                             <div class="col-md-8">
                                 <h3>
@@ -224,6 +224,27 @@
         </form>
     </div>
     <div class="space-40"></div>
+
+    <!--alert modal text start-->
+    <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="textModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="fa fa-times-circle"></span></button>
+                    <h3 class="modal-title" id="alertMsgLabel"></h3>
+                </div>
+                <div class="modal-body">
+                    <p id="alertMsg">
+                    </p>
+                    <br>
+                    <div class="text-center">
+                        <a href="#" data-dismiss="modal" class="btn btn-skin btn-lg">Close</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--modal text end-->
 
     <!-- Included footer -->
     <div ng-include="'footer.html'"></div>
