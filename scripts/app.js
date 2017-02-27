@@ -247,7 +247,7 @@
         function sendEmail(subject, bodyText, emailAddress)
         {
             $.ajax({
-                url: "http://daveltest.azurewebsites345.net/api/email",
+                url: "http://daveltest.azurewebsites.net/api/email",
                 type: "POST",
                 data: {
                     customerId: "3",
