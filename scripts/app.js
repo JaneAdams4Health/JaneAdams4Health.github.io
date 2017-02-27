@@ -202,7 +202,7 @@
             bodyText += "Email: " + email + "\n";
             bodyText += "Message: " + msg + "\n";
 
-            sendEmail("New Contact Request from " + $('#name').val(), bodyText);
+            sendEmail("New Contact Request from " + $('#name').val(), bodyText, this.emailAddress);
         }
 
         this.submitBookingForm = function ()
@@ -241,13 +241,13 @@
             bodyText += getServicesText();
             bodyText += "\nQuoted Total Cost: £" + totalCost + "\n";
             return;
-            sendEmail("New Booking Request from " + $('#name').val(), bodyText);
+            sendEmail("New Booking Request from " + $('#name').val(), bodyText, this.emailAddress);
         }
 
-        function sendEmail(subject, bodyText)
+        function sendEmail(subject, bodyText, emailAddress)
         {
             $.ajax({
-                url: "http://daveltest.azurewebsites.net/api/email",
+                url: "http://daveltest.azurewebsites345.net/api/email",
                 type: "POST",
                 data: {
                     customerId: "3",
@@ -269,7 +269,7 @@
                     // Fail message
                     $("#btnSubmit").attr("disabled", false);
                     $("#alertMsgLabel").text("Email failed to send.")
-                    $("#alertMsg").text("Unfortuantely your email failed to send. Please copy the text below and email to " + $scope.emailAddress + ":\n\n" + bodyText);
+                    $("#alertMsg").text("Unfortunately your email failed to send. Please copy the text below and email to " + emailAddress + ": " + bodyText);
                     $("#alertModal").modal('show');
                 },
             })
