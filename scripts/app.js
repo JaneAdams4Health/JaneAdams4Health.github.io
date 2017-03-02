@@ -168,13 +168,28 @@
 
         this.serviceCheckSelected = function ()
         {
+            if ($('#checkConsultation').attr('checked') ||
+                $('#checkFollowUp').attr('checked'))
+            {
+                $('#checkConsultationAndFollowUp').attr('checked', false);
+            }
+
+            if ($('#checkConsultation').attr('checked') &&
+                $('#checkFollowUp').attr('checked'))
+            {
+                $('#checkConsultationAndFollowUp').attr('checked', true);
+                this.selectedPackage1();
+            }
+
             refreshTotalCost();
         }
 
         this.selectedPackage1 = function()
         {
-            $('#checkConsultation').attr('checked', false);
-            $('#checkFollowUp').attr('checked', false);
+            if ($('#checkConsultationAndFollowUp').attr('checked')) {
+                $('#checkConsultation').attr('checked', false);
+                $('#checkFollowUp').attr('checked', false);
+            }
 
             refreshTotalCost();
         }
