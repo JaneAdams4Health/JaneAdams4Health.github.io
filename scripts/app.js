@@ -255,12 +255,26 @@
             bodyText += "\nServices requested:\n";
             bodyText += getServicesText();
             bodyText += "\nQuoted Total Cost: £" + totalCost + "\n";
-            return;
+
             sendEmail("New Booking Request from " + $('#name').val(), bodyText, this.emailAddress);
         }
 
         function sendEmail(subject, bodyText, emailAddress)
         {
+            // Block the page out until the email has been successful or failed
+            $.blockUI({
+                css: {
+                    border: 'none',
+                    padding: '15px',
+                    backgroundColor: '#000',
+                    '-webkit-border-radius': '10px',
+                    '-moz-border-radius': '10px',
+                    opacity: .5,
+                    color: '#fff'
+                },
+                message: 'Please wait. Sending email...'
+            });
+
             $.ajax({
                 url: "http://daveltest.azurewebsites.net/api/email",
                 type: "POST",
@@ -272,6 +286,10 @@
                 },
                 cache: false,
                 success: function () {
+                    $(document).ajaxStop(function () {
+                        $.unblockUI();
+                    });
+
                     // Enable button & show success message
                     $("#btnSubmit").attr("disabled", false);
                     $("#alertMsgLabel").text("Your email has been sent.")
@@ -281,6 +299,10 @@
 //                    $('#contactForm').trigger("reset");
                 },
                 error: function () {
+                    $(document).ajaxStop(function () {
+                        $.unblockUI();
+                    });
+
                     // Fail message
                     $("#btnSubmit").attr("disabled", false);
                     $("#alertMsgLabel").text("Email failed to send.")

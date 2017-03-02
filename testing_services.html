@@ -47,8 +47,8 @@
     </div><!--breadcrumb end-->
     <div class="space-70"></div>
     <div class="container">
-        <div class="row">
-            <div class="col-sm-3">
+        <div class="row equal-height">
+            <div class="col-md-3 col-sm-6 equal-col">
                 <div class="price-box gray-bg text-center">
                     <h3 class="p-title">Vitamin D Test</h3>
                     <h1 class="price">£45</h1>
@@ -61,7 +61,7 @@
                     <a href="booking.html?select=vitDtest" class="btn btn-xl btn-skin">Book</a>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-md-3 col-sm-6 equal-col">
                 <div class="price-box theme-bg text-center">
                     <h3 class="p-title">Vitamin D Test</h3>
                     <h1 class="price">£35</h1>
@@ -72,7 +72,7 @@
                     <a href="booking.html?select=vitDtestInConsultation" class="btn btn-xl btn-border-white">Book</a>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-md-3 col-sm-6 equal-col">
                 <div class="price-box gray-bg text-center">
                     <h3 class="p-title">Food Intolerance Test</h3>
                     <h2 class="">From</h2>
@@ -86,7 +86,7 @@
                     <a href="booking.html?select=foodIntolerance" class="btn btn-xl btn-skin">Book</a>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-md-3 col-sm-6 equal-col">
                 <div class="price-box theme-bg text-center">
                     <h3 class="p-title">Food Intolerance Test</h3>
                     <h2 class="">From</h2>
@@ -201,6 +201,17 @@
     <script src="bower_components/wow/dist/wow.min.js"></script>
     <script src="js/headroom.js"></script>
     <script src="js/versa.js" type="text/javascript"></script>
+
+    <!--equal height js-->
+    <script src="js/plugin/equalize/core.js"></script>
+    <script src="js/plugin/equalize/mediaquery.js"></script>
+    <script src="js/plugin/equalize/equalize.js"></script>
+    <script>
+            jQuery(document).ready(function () {
+            jQuery(".equal-height").equalize({
+            target: ".equal-col"
+                    });});
+    </script>
 
     <!-- Angular 1.6 -->
     <script src="scripts/angular.min.js"></script>
