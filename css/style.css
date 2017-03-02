@@ -1531,7 +1531,7 @@ Intro sections
 .breadrumb-transparent {
   padding-top: 200px;
   padding-bottom: 100px;
-  background: url("../img/about_me_background.jpg") no-repeat;
+  background: url("../img/banner_photo_consultation.jpg") no-repeat;
   background-attachment: fixed;
   background-size: cover;
 }
@@ -1582,6 +1582,59 @@ Intro sections
 }
 .breadcrumb-v1.b-parllax.tropic {
   background: url("../img/tropic_range.jpg") no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  background-attachment: fixed;
+  padding: 150px 0;
+  padding-top: 200px;
+}
+.breadcrumb-v1.b-parllax.therapyServices {
+  background: url("../img/banner_photo_consultation.jpg") no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  background-attachment: fixed;
+  padding: 150px 0;
+  padding-top: 200px;
+}
+.breadcrumb-v1.b-parllax.testing_services {
+  background: url("../img/about_me_background.jpg") no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  background-attachment: fixed;
+  padding: 150px 0;
+  padding-top: 200px;
+}
+.breadcrumb-v1.b-parllax.contact {
+  background: url("../img/about_me_background.jpg") no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  background-attachment: fixed;
+  padding: 150px 0;
+  padding-top: 200px;
+}
+.breadcrumb-v1.b-parllax.booking {
+  background: url("../img/about_me_background.jpg") no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  background-attachment: fixed;
+  padding: 150px 0;
+  padding-top: 200px;
+}
+.breadcrumb-v1.b-parllax.therapy {
+  background: url("../img/banner_photo_consultation.jpg") no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  background-attachment: fixed;
+  padding: 150px 0;
+  padding-top: 200px;
+}
+.breadcrumb-v1.b-parllax.about {
+  background: url("../img/about_me_background.jpg") no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  background-attachment: fixed;
+  padding: 150px 0;
+  padding-top: 200px;
 }
 .breadcrumb-v1.b-parllax h1, .breadcrumb-v1.b-parllax p, .breadcrumb-v1.b-parllax ol li {
   color: #fff;
