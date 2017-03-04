@@ -306,7 +306,7 @@
                     // Fail message
                     $("#btnSubmit").attr("disabled", false);
                     $("#alertMsgLabel").text("Email failed to send.")
-                    $("#alertMsg").text("Unfortunately your email failed to send. Please copy the text below and email to " + emailAddress + ": " + bodyText);
+                    $("#alertMsg").text("I'm sorry, your email has failed to send. Please email " + emailAddress + " directly instead with your request.");
                     $("#alertModal").modal('show');
                 },
             })

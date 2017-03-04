@@ -1,14 +1,51 @@
-﻿<footer class="footer-v1 footer">
+﻿    <!--clinics modal text start-->
+<div class="modal fade" id="clinicsModal" tabindex="-1" role="dialog" aria-labelledby="textModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="fa fa-times-circle"></span></button>
+                <h3 class="modal-title" id="myModalLabel">Clinics for Home or Work</h3>
+            </div>
+            <div class="modal-body">
+                <p>
+                    I currently practice as a mobile therapist. This allows me to come to see you at your place of work or at your home. 
+                </p>
+                <p>
+                    Many people live busy lives and find it difficult to find the time to make a special trip into town, get childcare or time off work.
+                </p>
+                <p>
+                    You do not need to worry about any of that as I can come to you, saving you both time and money as there are no costly parking meters involved!!
+                </p>
+                <p>
+                    All we need is a private place to talk with a comfy seat!
+                </p>
+                <p>
+                    I am a mum of four wonderful children so hold my clinics around school hours. I work Monday to Thursday 9.30am – 2.30pm and after 7.30pm in the evening. Friday my hours are 9.30am – 12 noon.
+                </p>
+                <p>
+                    I am based in the Corstorphine area of Edinburgh but am happy to see clients within a 30 minute car journey from this base. Clients further afield can still be accommodated by personal visits but will occur an additional travel cost or I can also do Skype consultations.
+                </p>
+                <br>
+                <div class="text-center">
+                    <a href="#" data-dismiss="modal" class="btn btn-skin btn-lg">Close</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--modal text end-->
+
+<footer class="footer-v1 footer">
     <div class="container">
         <div class="row">
             <div class="col-md-3 margin-b-30">
-                <h3>About Me</h3>
+                <h3><a href="about.html">About Me</a></h3>
                 <p>
                     I am a fully insured registered Nutritional Therapist who passionately believes prevention is better than cure and that if your body isn't functioning optimally then diet and lifestyle changes can support you to better health.
                 </p>
             </div>
             <div class="col-md-3 margin-b-30 col-xs-6">
-                <h3>Professional Bodies</h3>
+                <h3><a href="about.html">Professional Bodies</a></h3>
                 <div class="xs-gallery clearfix">
                     <a href="img/all_3_prof_bodies.jpg" data-lightbox="gallery" class="bw-images">
                         <img src="img/all_3_prof_bodies.jpg" alt="" class="img-responsive" width="200">
@@ -16,18 +53,18 @@
                 </div>
             </div>
             <div class="col-md-3 margin-b-30 col-xs-6">
-                <h3>Services</h3>
+                <h3 class="text-green">Services</h3>
                 <ul class="list-unstyled">
                     <li><a href="therapy_services.html">Personal Consultations</a></li>
                     <li><a href="testing_services.html">Health Tests</a></li>
-                    <li><a href="therapy_services.html">Clinics for home or at work</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#clinicsModal">Clinics for home or at work</a></li>
                     <li><a href="therapy_services.html">Packages</a></li>
                     <li><a href="tropic_services.html">Tropic Skincare</a></li>
 
                 </ul>
             </div>
             <div class="col-md-3 margin-b-30">
-                <h3>Contact me</h3>
+                <h3><a href="contact.html">Contact me</a></h3>
                 <p>
                     Phone {{ appCtrl.phoneNumber }}
                 </p>
@@ -54,7 +91,7 @@
             <div class="space-20"></div>
             <div class="row">
                 <div class="col-sm-4 margin-b-20">
-                    <a href="index.html"><!--<img src="images/logo-light.png" alt="">-->Jane Adams Logo</a>
+                    <a href="index.html"><img src="img/heartlogo_small.png" /></a>
                 </div>
                 <div class="col-sm-4 margin-b-20">
                     <span>&copy; Copyright {{ appCtrl.currentYear }}. Designed by Cormorant Software</span>

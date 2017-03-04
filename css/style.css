@@ -571,7 +571,7 @@ Top bar styles
   font-family: "Poppins", sans-serif;
 }
 .top-header .navbar-nav > li > a:hover {
-  color: #09c4f2;
+  color: #69d019 /*#09c4f2;*/
 }
 
 .top-header .label {
@@ -580,12 +580,13 @@ Top bar styles
 }
 
 .top-header .navbar-nav > .active > a, .top-header .navbar-nav > .active > a:focus, .top-header .navbar-nav > .active > a:hover, .top-header .navbar-nav > .open > a, .top-header .navbar-nav > .open > a:focus, .top-header .navbar-nav > .open > a:hover {
-  color: #5ada1b !important;
+  color: #235020 !important;
   background-color: transparent;
 }
 
 .navbar-default {
-  background-color: #fff;
+  background-color: rgba(255,255,255,0.75);
+/*  background-color: #fff;*/
 }
 
 .header-transparent {
@@ -1597,7 +1598,7 @@ Intro sections
   padding-top: 200px;
 }
 .breadcrumb-v1.b-parllax.testing_services {
-  background: url("../img/about_me_background.jpg") no-repeat;
+  background: url("../img/tomatoes.jpg") no-repeat;
   background-size: cover;
   background-position: 0 0;
   background-attachment: fixed;
@@ -1605,7 +1606,7 @@ Intro sections
   padding-top: 200px;
 }
 .breadcrumb-v1.b-parllax.contact {
-  background: url("../img/about_me_background.jpg") no-repeat;
+  background: url("../img/heart logo_writing.jpg") no-repeat;
   background-size: cover;
   background-position: 0 0;
   background-attachment: fixed;
@@ -1613,7 +1614,7 @@ Intro sections
   padding-top: 200px;
 }
 .breadcrumb-v1.b-parllax.booking {
-  background: url("../img/about_me_background.jpg") no-repeat;
+  background: url("../img/peppers.jpg") no-repeat;
   background-size: cover;
   background-position: 0 0;
   background-attachment: fixed;
@@ -1629,13 +1630,23 @@ Intro sections
   padding-top: 200px;
 }
 .breadcrumb-v1.b-parllax.about {
-  background: url("../img/about_me_background.jpg") no-repeat;
+  background: url("../img/rainbow.jpg") no-repeat;
   background-size: cover;
   background-position: 0 0;
   background-attachment: fixed;
   padding: 150px 0;
   padding-top: 200px;
 }
+
+@media (min-width: 768px) {
+  .breadcrumb-v1.b-parllax.therapy {
+    background-size:100%;
+  }
+  .breadcrumb-v1.b-parllax.therapyServices {
+    background-size:100%;
+  }
+}
+
 .breadcrumb-v1.b-parllax h1, .breadcrumb-v1.b-parllax p, .breadcrumb-v1.b-parllax ol li {
   color: #fff;
 }
@@ -3997,6 +4008,9 @@ input[type="password"], input[type="email"], select.form-control {
   color: #fff;
 }
 
+.text-green {
+    color: #3c8837 !important;
+}
 .tp-caption.NotGeneric-Title, .NotGeneric-Title, .tp-caption.NotGeneric-Button, .NotGeneric-Button {
   font-family: "Poppins", sans-serif;
 }
