@@ -14,6 +14,7 @@
         this.tumblrUrl = 'https://janeadamsnutritionaltherapist.tumblr.com/';
         this.twitterUrl = 'https://twitter.com/jadams4health';
         this.linkedInUrl = 'https://www.linkedin.com/in/jane-adams-b8188910/';
+        this.cormorantUrl = 'http://www.cormorantsoftware.co.uk';
 
         this.costIsFrom = false;
 
