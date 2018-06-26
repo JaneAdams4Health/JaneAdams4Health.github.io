@@ -1621,6 +1621,14 @@ Intro sections
   padding: 150px 0;
   padding-top: 200px;
 }
+.breadcrumb-v1.b-parllax.workshops {
+  background: url("../img/kiwis.jpg") no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  background-attachment: fixed;
+  padding: 150px 0;
+  padding-top: 200px;
+}
 .breadcrumb-v1.b-parllax.therapy {
   background: url("../img/banner_photo_consultation.jpg") no-repeat;
   background-size: cover;
