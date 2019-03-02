@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en" data-ng-app="janeApp">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,6 +32,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
+
 <body data-ng-controller="AppController as appCtrl">
 
     <div id="preloader"></div>
@@ -46,7 +48,8 @@
                 </div>
             </div>
         </div>
-    </div><!--breadcrumb end-->
+    </div>
+    <!--breadcrumb end-->
     <div class="space-70"></div>
     <div class="container">
         <div class="container">
@@ -58,71 +61,151 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12">
-                    <p>                        
-                        I run nutritional workshop throughout the year on a variety of topics including skin health, weight loss and management, boosting immunity and digestion.
-                    </p><p>
-                        These workshops are held from my home clinic (12 Stuart Green, EH12 8YF) and are limited to 8 people. They run for approximately 1.5 hours and you will receive handouts with information to take away. (This way you can focus on listening and not have to take notes).
-                    </p><p>
-                        Generally, the format is around 1 hour information session with a chance to ask questions and have some refreshments afterwards.
-                    </p><p>
-                        Prices will range between £10-20 depending on content, length of duration and handouts/freebies given out.
-                    </p><p>
-                        For information on upcoming events see my Facebook page : <a href="{{ appCtrl.facebookUrl }}" target="_blank">www.facebook.com/janeadamsNT</a> or email me at <a href="mailto:{{ appCtrl.emailAddress }}">{{ appCtrl.emailAddress }}</a> or call me on {{ appCtrl.phoneNumber }}.
+                <div class="col-sm-4">
+                    <strong class="highlight">Personal</strong>
+                    <p>
+                        I run nutritional workshops from my home based clinic for up to 8 people on a variety of topics
+                        such as:
+                        <ul>
+                            <li>
+                                Skin health
+                            </li>
+                            <li>
+                                Digestion
+                            </li>
+                            <li>
+                                Healthy swaps
+                            </li>
+                            <li>
+                                Fad diets - pros and cons
+                            </li>
+                            <li>
+                                Nutrition to support good mood
+                            </li>
+                            <li>
+                                Kick start healthy eating
+                            </li>
+                            <li>
+                                Weight loss and management
+                            </li>
+                        </ul>
+                    </p>
+                    <p>
+                        Prices range between £10-20 per person.
+                    </p>
+                    <p>
+                        For information on upcoming events see my Facebook page : <a href="{{ appCtrl.facebookUrl }}"
+                            target="_blank">www.facebook.com/janeadamsNT</a> or email me at <a
+                            href="mailto:{{ appCtrl.emailAddress }}">{{ appCtrl.emailAddress }}</a> or call me on
+                        {{ appCtrl.phoneNumber }}.
+                    </p>
+                </div>
+                <div class="col-sm-4">
+                    <strong class="highlight">Business</strong>
+                    <p>
+                        For company health days I offer the following:
+                        <ul>
+                            <li>
+                                Nutritional presentations
+                            </li>
+                            <li>
+                                Whole day drop-in nutritional clinics
+                            </li>
+                            <li>
+                                1:1 consultations with staff
+                            </li>
+                        </ul>
+                    </p>
+                    <p>
+                        These packages can be tailored to your needs.
+                    </p>
+                    <p>
+                        I have worked with HSBC in the past and prices start at £200.
+                    </p>
+                    <p>
+                        Please email me at <a href="mailto:{{ appCtrl.emailAddress }}">{{ appCtrl.emailAddress }}</a> or
+                        call me on {{ appCtrl.phoneNumber }} to discuss further.
+                    </p>
+                </div>
+                <div class="col-sm-4">
+                    <strong class="highlight">Community</strong>
+                    <p>
+                        I offer talks to community groups on any nutrition topic such as:
+                        <ul>
+                            <li>
+                                Healthy aging
+                            </li>
+                            <li>
+                                Pre and post pregnancy
+                            </li>
+                            <li>
+                                Childrens nutrition including fussy eaters
+                            </li>
+                        </ul>
+                    </p>
+                    <p>
+                        I have talked at local church groups and primary schools promoting healthy eating.
+                    </p>
+                    <p>
+                        Please email me at <a href="mailto:{{ appCtrl.emailAddress }}">{{ appCtrl.emailAddress }}</a> or
+                        call me on {{ appCtrl.phoneNumber }} to discuss further.
                     </p>
                 </div>
             </div>
         </div>
         <div class="space-70"></div>
-    </div><!--container end-->
+    </div>
+    <!--container end-->
 
-                <!-- Included footer -->
-                <div ng-include="'footer.html'"></div>
+    <!-- Included footer -->
+    <div ng-include="'footer.html'"></div>
 
-                <!--back to top-->
-                <a href="#" class="scrollToTop"><span class="livicon " data-size="32" data-name="angle-double-up" data-duration="1000"></span></a>
-                <!--back to top end-->
-                <!-- jQuery plugins-->
-                <script src="bower_components/jquery/dist/jquery.min.js"></script>
-                <script src="js/jquery-migrate.min.js"></script>
-                <script src="js/jquery.easing.min.js"></script>
-                <script src="bootstrap/js/bootstrap.min.js"></script>
-                <script src="js/bootstrap-hover-dropdown.min.js"></script>
-                <!--
+    <!--back to top-->
+    <a href="#" class="scrollToTop"><span class="livicon " data-size="32" data-name="angle-double-up"
+            data-duration="1000"></span></a>
+    <!--back to top end-->
+    <!-- jQuery plugins-->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="js/jquery-migrate.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-hover-dropdown.min.js"></script>
+    <!--
                     <script src="live-icon/raphael-min.js"></script>
                     <script src="live-icon/livicons-1.4.min.js"></script>
                     <script src="live-icon/raphael-min.js"></script>-->
-                <script src="bower_components/waypoints/lib/jquery.waypoints.min.js"></script>
-                <script src="js/jquery.counterup.min.js" type="text/javascript"></script>
-                <script src="owl-carousel/owl.carousel.min.js"></script>
-                <script src="bower_components/flexslider/jquery.flexslider-min.js"></script>
-                <script src="js/jquery.appear.js" type="text/javascript"></script>
-                <script src="js/modernizr.custom.97074.js" type="text/javascript"></script>
-                <script src="js/jquery.stellar.min.js" type="text/javascript"></script>
-                <script src="js/jquery.BlackAndWhite.js"></script>
-                <!--    <script src="bower_components/lightbox2/dist/js/lightbox.min.js"></script>
+    <script src="bower_components/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js" type="text/javascript"></script>
+    <script src="owl-carousel/owl.carousel.min.js"></script>
+    <script src="bower_components/flexslider/jquery.flexslider-min.js"></script>
+    <script src="js/jquery.appear.js" type="text/javascript"></script>
+    <script src="js/modernizr.custom.97074.js" type="text/javascript"></script>
+    <script src="js/jquery.stellar.min.js" type="text/javascript"></script>
+    <script src="js/jquery.BlackAndWhite.js"></script>
+    <!--    <script src="bower_components/lightbox2/dist/js/lightbox.min.js"></script>
                     <script src="js/jquery.hoverdir.js"></script>-->
-                <script src="js/jquery.sticky.js"></script>
-                <script src="bower_components/wow/dist/wow.min.js"></script>
-                <script src="js/headroom.js"></script>
-                <script src="js/versa.js" type="text/javascript"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="bower_components/wow/dist/wow.min.js"></script>
+    <script src="js/headroom.js"></script>
+    <script src="js/versa.js" type="text/javascript"></script>
 
-                <!--equal height js-->
-                <script src="js/plugin/equalize/core.js"></script>
-                <script src="js/plugin/equalize/mediaquery.js"></script>
-                <script src="js/plugin/equalize/equalize.js"></script>
-                <script>
-                    jQuery(document).ready(function () {
-                        jQuery(".equal-height").equalize({
-                            target: ".equal-col"
-                        });
-                    });
-                </script>
+    <!--equal height js-->
+    <script src="js/plugin/equalize/core.js"></script>
+    <script src="js/plugin/equalize/mediaquery.js"></script>
+    <script src="js/plugin/equalize/equalize.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            jQuery(".equal-height").equalize({
+                target: ".equal-col"
+            });
+        });
+    </script>
 
-                <!-- Angular 1.6 -->
-                <script src="scripts/angular.min.js"></script>
+    <!-- Angular 1.6 -->
+    <script src="scripts/angular.min.js"></script>
 
-                <!-- Angular App script -->
-                <script src="scripts/app.js"></script>
+    <!-- Angular App script -->
+    <script src="scripts/app.js"></script>
 </body>
+
 </html>
