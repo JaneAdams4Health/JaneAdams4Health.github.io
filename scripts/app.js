@@ -119,6 +119,7 @@
 
         function getServicesText() {
             var txt = "";
+            var consultationAdded = false;
 
             if ($('#checkConsultation').attr('checked')) {
                 txt += "Nutritional Consultation - £70\n"
