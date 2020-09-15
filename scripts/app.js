@@ -1,10 +1,8 @@
 ﻿// app.js
-(function ()
-{
+(function () {
     var app = angular.module('janeApp', []);
 
-    app.controller('AppController', function ($scope)
-    {
+    app.controller('AppController', function ($scope, $http) {
         var now = new Date(Date.now());
 
         this.currentYear = now.getFullYear();
@@ -34,8 +32,7 @@
             // Get up to the first .
             url = url.substr(0, url.indexOf("."));
 
-            switch (url)
-            {
+            switch (url) {
                 case "index": $('#navHome').addClass("active"); break;
                 case "about": $('#navAbout').addClass("active"); break;
                 case "therapy": $('#navTherapy').addClass("active"); break;
@@ -52,10 +49,8 @@
             }
         }
 
-        function setService(service)
-        {
-            switch (service)
-            {
+        function setService(service) {
+            switch (service) {
                 case "consultation":
                     $('#checkConsultation').attr('checked', true);
                     break;
@@ -157,8 +152,7 @@
             return txt;
         }
 
-        function refreshTotalCost()
-        {
+        function refreshTotalCost() {
             var costText = "£" + getTotalCost();
 
             if ($('#checkIntoleranceTest').attr('checked')) {
@@ -168,17 +162,14 @@
             $('#spanTotalCost').text(costText);
         }
 
-        this.serviceCheckSelected = function ()
-        {
+        this.serviceCheckSelected = function () {
             if ($('#checkConsultation').attr('checked') ||
-                $('#checkFollowUp').attr('checked'))
-            {
+                $('#checkFollowUp').attr('checked')) {
                 $('#checkConsultationAndFollowUp').attr('checked', false);
             }
 
             if ($('#checkConsultation').attr('checked') &&
-                $('#checkFollowUp').attr('checked'))
-            {
+                $('#checkFollowUp').attr('checked')) {
                 $('#checkConsultationAndFollowUp').attr('checked', true);
                 this.selectedPackage1();
             }
@@ -186,8 +177,7 @@
             refreshTotalCost();
         }
 
-        this.selectedPackage1 = function()
-        {
+        this.selectedPackage1 = function () {
             if ($('#checkConsultationAndFollowUp').attr('checked')) {
                 $('#checkConsultation').attr('checked', false);
                 $('#checkFollowUp').attr('checked', false);
@@ -196,8 +186,7 @@
             refreshTotalCost();
         }
 
-        this.submitContactForm = function ()
-        {
+        this.submitContactForm = function () {
             // Disable the button to avoid repeated submits
             $("#btnSubmit").attr("disabled", true);
 
@@ -213,17 +202,16 @@
                 return;
             }
 
-            var bodyText = "A new booking request has been made:\n";
+            var bodyText = "A new contact request has been made:\n";
 
             bodyText += "Name: " + name + "\n";
             bodyText += "Email: " + email + "\n";
             bodyText += "Message: " + msg + "\n";
 
-            sendEmail("New Contact Request from " + $('#name').val(), bodyText, this.emailAddress);
+            sendEmail("New Contact Request from " + $('#name').val(), bodyText, email);
         }
 
-        this.submitBookingForm = function ()
-        {
+        this.submitBookingForm = function () {
             // Disable the button to avoid repeated submits
             $("#btnSubmit").attr("disabled", true);
 
@@ -258,11 +246,10 @@
             bodyText += getServicesText();
             bodyText += "\nQuoted Total Cost: £" + totalCost + "\n";
 
-            sendEmail("New Booking Request from " + $('#name').val(), bodyText, this.emailAddress);
+            sendEmail("New Booking Request from " + $('#name').val(), bodyText, email);
         }
 
-        function sendEmail(subject, bodyText, emailAddress)
-        {
+        function sendEmail(subject, bodyText, emailAddress) {
             // Block the page out until the email has been successful or failed
             $.blockUI({
                 css: {
@@ -277,20 +264,16 @@
                 message: 'Please wait. Sending email...'
             });
 
-            $.ajax({
-                url: "http://daveltest.azurewebsites.net/api/email",
-                type: "POST",
-                data: {
-                    customerId: "3",
-                    applicationName: "JaneAdams4HealthEmailApp",
-                    subject: subject,
-                    body: bodyText
-                },
-                cache: false,
-                success: function () {
-                    $(document).ajaxStop(function () {
-                        $.unblockUI();
-                    });
+            var emailApiUrl = "https://formspree.io/moqpalle";
+//            var emailApiUrl = "https://formspree.io/moqkgbvv";    // For local testing
+
+            $http.post(emailApiUrl,
+                {
+                    "_replyto": emailAddress,
+                    "_subject": subject,
+                    "message": bodyText
+                }).then(function successCallback(response) {
+                    $.unblockUI();
 
                     // Enable button & show success message
                     $("#btnSubmit").attr("disabled", false);
@@ -298,21 +281,17 @@
                     $("#alertModal").modal('show');
 
                     //clear all fields
-//                    $('#contactForm').trigger("reset");
-                },
-                error: function () {
-                    $(document).ajaxStop(function () {
-                        $.unblockUI();
-                    });
+                    //                    $('#contactForm').trigger("reset");
+                }, function errorCallback(response) {
+                    $.unblockUI();
 
                     // Fail message
                     $("#btnSubmit").attr("disabled", false);
                     $("#alertMsgLabel").text("Email failed to send.")
                     $("#alertMsg").text("I'm sorry, your email has failed to send. Please email " + emailAddress + " directly instead with your request.");
                     $("#alertModal").modal('show');
-                },
-            })
-        }
+                });
+            }
     });
 
-})();
+}) ();
