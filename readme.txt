@@ -28,7 +28,7 @@ https://github.com/JaneAdams4Health/JaneAdams4Health.github.io
 4) Click on ... and Remote->Add remote and then click on Add remote from github
 5) You'll then be asked to sign in to github and enter the git repository which is https://github.com/JaneAdams4Health/JaneAdams4Health.github.io.git
 6) You need to clone the master branch which will pull everything on to your computer so you can edit it - choose a location on your harddrive to store this project
-7) To make changes just edit any file, you can then test it looks OK (see below) and then stage and push your changes to publish them to the website
+7) To make changes just edit any file, you can then test it looks OK (see below) and then stage, commit and push your changes to publish them to the website
 
 Testing:
 Use powershell to run a webserver on your local machine.

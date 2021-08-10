@@ -14,6 +14,16 @@
         this.linkedInUrl = 'https://www.linkedin.com/in/jane-adams-b8188910/';
         this.cormorantUrl = 'http://www.cormorantsoftware.co.uk';
         this.instagramUrl = "https://www.instagram.com/janeadams4health/";
+        this.costs = {
+            initialConsultation: 80,
+            followUp: 50,
+            consultationAndFollowUp: 120,
+            twoFollowUps: 90,
+            vitaminD: 50,
+            vitaminDWithConsultatiom: 35,
+            intolerance: 80,
+            intoleranceWithConsultation: 50
+        };
 
         this.costIsFrom = false;
 
@@ -83,35 +93,36 @@
         function getTotalCost() {
             var totalCost = 0;
             var consultationAdded = false;
+            var costs = $scope.appCtrl.costs;
 
             if ($('#checkConsultation').attr('checked')) {
-                totalCost += 70;
+                totalCost += costs.initialConsultation;
                 consultationAdded = true;
             }
             if ($('#checkFollowUp').attr('checked')) {
                 if (consultationAdded)
-                    totalCost += 30;
+                    totalCost += costs.consultationAndFollowUp - costs.initialConsultation;
                 else
-                    totalCost += 45;
+                    totalCost += costs.followUp;
             }
             if ($('#checkConsultationAndFollowUp').attr('checked')) {
-                totalCost += 100;
+                totalCost += costs.consultationAndFollowUp;
                 consultationAdded = true;
             }
             if ($('#checkTwoFollowUps').attr('checked')) {
-                totalCost += 80;
+                totalCost += costs.twoFollowUps;
             }
             if ($('#checkVitaminDtest').attr('checked')) {
                 if (consultationAdded)
-                    totalCost += 35;
+                    totalCost += costs.vitaminDWithConsultatiom;
                 else
-                    totalCost += 45;
+                    totalCost += costs.vitaminD;
             }
             if ($('#checkIntoleranceTest').attr('checked')) {
                 if (consultationAdded)
-                    totalCost += 40;
+                    totalCost += costs.intoleranceWithConsultation;
                 else
-                    totalCost += 80;
+                    totalCost += costs.intolerance;
             }
 
             return totalCost;
@@ -120,34 +131,35 @@
         function getServicesText() {
             var txt = "";
             var consultationAdded = false;
+            var costs = $scope.appCtrl.costs;
 
             if ($('#checkConsultation').attr('checked')) {
-                txt += "Nutritional Consultation - £70\n"
+                txt += "Nutritional Consultation - £" + costs.initialConsultation + "\n"
                 consultationAdded = true;
             }
             if ($('#checkFollowUp').attr('checked')) {
-                txt += "1 Follow Up - £45\n"
+                txt += "1 Follow Up - £" + costs.followUp + "\n"
             }
             if ($('#checkConsultationAndFollowUp').attr('checked')) {
-                txt += "Nutritional Consultation and a Follow Up - £100\n"
+                txt += "Nutritional Consultation and a Follow Up - £" + costs.consultationAndFollowUp + "\n"
                 consultationAdded = true;
             }
             if ($('#checkTwoFollowUps').attr('checked')) {
-                txt += "2 Follow Ups - £80\n"
+                txt += "2 Follow Ups - £" + costs.twoFollowUps + "\n"
             }
             if ($('#checkVitaminDtest').attr('checked')) {
                 txt += "Vitamin D Test - "
                 if (consultationAdded)
-                    txt += "£35 - discounted as consultation included\n";
+                    txt += "£" + costs.vitaminDWithConsultatiom + " - discounted as consultation included\n";
                 else
-                    txt += "£45\n";
+                    txt += "£" + costs.vitaminD + "\n";
             }
             if ($('#checkIntoleranceTest').attr('checked')) {
                 txt += "Food Intolerance Test - "
                 if (consultationAdded)
-                    txt += "£40 - discounted as consultation included\n";
+                    txt += "£" + costs.intoleranceWithConsultation + " - discounted as consultation included\n";
                 else
-                    txt += "£80\n";
+                    txt += "£" + costs.intolerance + "\n";
             }
 
             return txt;
